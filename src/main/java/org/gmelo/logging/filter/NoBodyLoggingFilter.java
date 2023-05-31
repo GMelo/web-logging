@@ -1,4 +1,4 @@
-package org.gmelo.logging.interceptor;
+package org.gmelo.logging.filter;
 
 import org.springframework.lang.NonNull;
 import org.springframework.web.filter.AbstractRequestLoggingFilter;
@@ -9,7 +9,7 @@ public class NoBodyLoggingFilter extends AbstractRequestLoggingFilter {
 
     @Override
     protected boolean shouldLog(HttpServletRequest request) {
-        return 0 == request.getContentLength();
+        return 0 >= request.getContentLength();
     }
 
     @Override
